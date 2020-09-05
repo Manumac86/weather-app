@@ -18,7 +18,7 @@ const StyledApp = styled.div`
   flex-wrap: wrap;
   height: 100vh;
   justify-content: center;
-  padding: 0 0 20px 0;
+  padding: 0 0 0 0;
 `;
 
 const StyledWrapper = styled.div`
