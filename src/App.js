@@ -75,7 +75,7 @@ export default class App extends React.Component {
     })
     .then(data => {
       console.log(data)
-      const timezone = data.timezone.split('/');
+      const timezone = data.timezone.replace(/\//g, ', ');
       const icon = `https://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png`;
       const descriptionFirstLetter = data.current.weather[0].description.charAt(0).toUpperCase();
       const description = descriptionFirstLetter + data.current.weather[0].description.slice(1);
@@ -84,7 +84,7 @@ export default class App extends React.Component {
         loading: false,
         temp: data.current.temp,
         description: description,
-        timezone: timezone[2],
+        timezone: timezone,
         icon: icon
       })
     });
