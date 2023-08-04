@@ -54,8 +54,6 @@ export default class App extends React.Component {
       lat: 0,
       lon: 0,
     }
-
-    this.proxy = `${process.env.REACT_APP_PROXY}`
     //this.api = `${this.proxy}${process.env.REACT_APP_API}?lat=${this.location.lat}&lon=${this.location.lon}&appid=${process.env.REACT_APP_API_KEY}`
   }
 
@@ -71,7 +69,7 @@ export default class App extends React.Component {
   }
 
   fetchData = () => {
-    fetch(`${this.proxy}${process.env.REACT_APP_API}?lat=${this.location.lat}&lon=${this.location.lon}&units=metric&appid=${process.env.REACT_APP_API_KEY}`)
+    fetch(`${process.env.REACT_APP_API}?lat=${this.location.lat}&lon=${this.location.lon}&units=metric&appid=${process.env.REACT_APP_API_KEY}`)
     .then(response => {
       return response.json();
     })
